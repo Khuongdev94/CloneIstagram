@@ -14,13 +14,13 @@ import {
 } from "react-native";
 import { Ionicons, FontAwesome5, Entypo, AntDesign } from "@expo/vector-icons";
 import Colors from "../../contants/Colors";
+import FontSize from "../../contants/FontSize";
 
 export default function Search() {
   const [text, setText] = useState("");
   const handleGetText = (text: string) => {
     setText(text);
   };
-  console.log(text);
   const userStory = [
     {
       id: "1",
@@ -305,9 +305,6 @@ export default function Search() {
   useEffect(() => {
     setDataFilter(filterUser());
   }, [text]);
-  console.log(dataFilter);
-
-  //   console.log(filterUser);
   return (
     <KeyboardAvoidingView
       behavior={Platform.OS === "ios" ? "padding" : "height"}
@@ -345,23 +342,33 @@ export default function Search() {
             color={"black"}
           />
         </View>
-
-        <FlatList
-          showsHorizontalScrollIndicator={false}
-          data={dataFilter}
-          numColumns={3}
-          renderItem={({ item }) => (
-            <View style={{ alignItems: "center", margin: 2 }}>
-              <Image
-                style={styles.imgUser}
-                source={{
-                  uri: item.describe.urlPort,
-                }}
-              />
-            </View>
-          )}
-          keyExtractor={(item) => item.id}
-        />
+        {dataFilter.length > 0 ? (
+          <FlatList
+            showsHorizontalScrollIndicator={false}
+            data={dataFilter}
+            numColumns={3}
+            renderItem={({ item }) => (
+              <View style={{ alignItems: "center", margin: 2 }}>
+                <Image
+                  style={styles.imgUser}
+                  source={{
+                    uri: item.describe.urlPort,
+                  }}
+                />
+              </View>
+            )}
+            keyExtractor={(item) => item.id}
+          />
+        ) : (
+          <View
+            style={{
+              justifyContent: "center",
+              alignItems: "center",
+            }}
+          >
+            <Text style={{ fontSize: FontSize.h2 }}>Not Found</Text>
+          </View>
+        )}
       </View>
     </KeyboardAvoidingView>
   );
