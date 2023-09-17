@@ -11,7 +11,7 @@ Scan the following QR code with an Android device to open it in Expo Go or a dev
 ### 2. Register Form
 
 ### 3. Home screen
-<img src="https://user-images.githubusercontent.com/12640832/87749278-7d02cc00-c822-11ea-9b6a-b19e83f38841.gif" width="250" alt="Stop Watch" />
+<img src="(https://user-images.githubusercontent.com/132865865/268508436-62404670-8f5d-4c51-a9d0-44735b36748b.jpg)" width="250" alt="Home screen" />
 
 
 ### 4. Search screen
