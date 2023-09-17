@@ -6,7 +6,7 @@
 
 
 ### 2. Register Form
-![register_name](https://github.com/Khuongdev94/CloneIstagram/assets/132865865/e6452d35-9e26-418e-b370-41bb278669ae)
+![register_name](https://github.com/Khuongdev94/CloneIstagram/assets/132865865/e6452d35-9e26-418e-b370-41bb278669ae),
 ![register_password](https://github.com/Khuongdev94/CloneIstagram/assets/132865865/06a14886-60d7-4f4a-aacd-f4ed2c23ed33)
 
 
