@@ -1,21 +1,16 @@
 import React from "react";
-import {
-  StyleSheet,
-  Text,
-  View,
-  Image,
-  TextInput,
-  KeyboardAvoidingView,
-  Platform,
-  TouchableOpacity,
-  Alert,
-  Keyboard,
-} from "react-native";
-import { Ionicons, Entypo, AntDesign, FontAwesome5 } from "@expo/vector-icons";
-import Colors from "../contants/Colors";
+import { StyleSheet, Text, View } from "react-native";
+import { Ionicons, FontAwesome5 } from "@expo/vector-icons";
 import FontSize from "../contants/FontSize";
+interface IProps {
+  onFilterLike: () => void;
+  like: boolean;
+}
 
-export default function Header() {
+export default function Header({ onFilterLike, like }: IProps) {
+  const handleUserFilter = () => {
+    onFilterLike();
+  };
   return (
     <View style={styles.header}>
       <View style={{ flex: 1 }}>
@@ -24,9 +19,10 @@ export default function Header() {
       <View style={styles.blockIcon}>
         <Ionicons
           style={styles.iconPassword}
-          name="heart-outline"
+          name={like ? "heart-sharp" : "heart-outline"}
           size={26}
-          color={"blue"}
+          color={like ? "red" : "blue"}
+          onPress={handleUserFilter}
         />
         <Ionicons
           style={styles.iconPassword}
@@ -68,38 +64,5 @@ const styles = StyleSheet.create({
   iconPassword: {
     marginHorizontal: 6,
     padding: 10,
-  },
-  story: {
-    flexDirection: "row",
-    marginBottom: 24,
-  },
-  userName: {
-    fontSize: FontSize.h6,
-    textAlign: "center",
-  },
-  imgUser: {
-    width: 60,
-    height: 60,
-    borderRadius: 30,
-    resizeMode: "cover",
-  },
-  imgNews: {
-    width: 30,
-    height: 30,
-    borderRadius: 15,
-    resizeMode: "cover",
-  },
-  imgNewMain: {
-    width: "100%",
-    height: 460,
-    resizeMode: "cover",
-  },
-  icon: {
-    position: "absolute",
-    top: 34,
-    right: 5,
-    backgroundColor: "white",
-    padding: 2,
-    borderRadius: 16,
   },
 });
