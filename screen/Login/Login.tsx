@@ -207,7 +207,7 @@ const styles = StyleSheet.create({
   },
   title: {
     color: Colors.secondary,
-    fontSize: FontSize.h3,
+    fontSize: FontSize.h2,
     fontWeight: "bold",
     marginBottom: 20,
     alignSelf: "center",
