@@ -54,7 +54,6 @@ export default function Login() {
     Keyboard.dismiss();
     setName("");
     setPassword("");
-    console.log(user);
   };
   return (
     <KeyboardAvoidingView
