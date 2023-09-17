@@ -30,7 +30,7 @@ function fetchUserStory(params: FetchListPostParams) {
 
 export default function Home() {
   const [stories, setStories] = useState([...userStory]);
-  const [like, setLike] = useState(true);
+  const [like, setLike] = useState(false);
 
   const handleLike = (id: string) => {
     const story = stories.find((item) => item.id === id);
@@ -48,23 +48,13 @@ export default function Home() {
   }, [like]);
 
   const handleFilterLike = (isGetOnlyLike: boolean) => {
-    setLike(isGetOnlyLike);
-  };
-
-  const handleFilterUserLike = (isLike: boolean) => {
-    const storiesLiked = stories.filter((item) => item.isLike === true);
-    if (isLike === true) {
-      setStories([...storiesLiked]);
-    } else {
-      setStories([...userStory]);
-    }
-    setLike(isLike);
+    setLike(!isGetOnlyLike);
   };
 
   return (
     <View style={styles.container}>
       {/* header */}
-      <Header onFilterLike={() => handleFilterLike(!like)} like={like} />
+      <Header onFilterLike={() => handleFilterLike(like)} like={like} />
       {/* story */}
       <View style={styles.story}>
         <View style={{ marginRight: 5 }}>
@@ -79,12 +69,9 @@ export default function Home() {
             }}
             resizeMode="cover"
           />
-          <FontAwesome5
-            style={styles.icon}
-            name="plus-circle"
-            size={18}
-            color={"blue"}
-          />
+          <View style={styles.icon}>
+            <FontAwesome5 name="plus-circle" size={18} color={"blue"} />
+          </View>
           <Text style={styles.userName}>Your Story</Text>
         </View>
         <View
@@ -114,7 +101,7 @@ export default function Home() {
           />
         </View>
       </View>
-      {/* bảng tin */}
+      {/* News */}
       <FlatList
         data={stories}
         renderItem={({ item }) => (
@@ -197,7 +184,7 @@ const styles = StyleSheet.create({
   },
   iconPassword: {
     marginHorizontal: 6,
-    padding: 10,
+    padding: 6,
   },
   story: {
     flexDirection: "row",
@@ -227,9 +214,9 @@ const styles = StyleSheet.create({
   icon: {
     position: "absolute",
     top: 34,
-    right: 5,
-    backgroundColor: "white",
-    padding: 2,
-    borderRadius: 16,
+    right: 0,
+    padding: 1,
+    borderRadius: 20,
+    overflow: "visible",
   },
 });
