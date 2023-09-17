@@ -55,14 +55,14 @@ const styles = StyleSheet.create({
     marginBottom: 16,
   },
   textHead: {
-    fontSize: FontSize.h2,
+    fontSize: FontSize.h1,
+    fontWeight: "bold",
   },
   blockIcon: {
     flexDirection: "row",
     justifyContent: "flex-end",
   },
   iconPassword: {
-    marginHorizontal: 6,
-    padding: 10,
+    padding: 20,
   },
 });
