@@ -132,7 +132,7 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: "#fff",
     padding: 10,
-    marginBottom: 30,
+    marginVertical: 30,
   },
   block: {
     paddingVertical: 10,
