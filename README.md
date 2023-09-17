@@ -11,6 +11,7 @@ Scan the following QR code with an Android device to open it in Expo Go or a dev
 ### 2. Register Form
 
 ### 3. Home screen
+![home](https://github.com/Khuongdev94/CloneIstagram/assets/132865865/62404670-8f5d-4c51-a9d0-44735b36748b)
 
 
 ### 4. Search screen
