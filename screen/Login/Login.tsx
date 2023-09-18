@@ -14,8 +14,10 @@ import { Ionicons } from "@expo/vector-icons";
 import Colors from "../../contants/Colors";
 import FontSize from "../../contants/FontSize";
 import { isValidPassword } from "../../component/validate";
+import { NavigationContainer } from "@react-navigation/native";
+import { createNativeStackNavigator } from "@react-navigation/native-stack";
 
-export default function Login() {
+export default function Login({ navigation }: { navigation: any }) {
   //kiểm tra dữ liệu
   const [errorName, setErrorName] = useState("");
   const [errorPassword, setErrorPassword] = useState("");
@@ -46,15 +48,16 @@ export default function Login() {
   const isValidationOK = () =>
     name.length > 0 && password.length > 0 && isValidPassword(password) == true;
 
-  const handleSubmit = () => {
-    const user = {
-      name: name,
-      password: password,
-    };
-    Keyboard.dismiss();
-    setName("");
-    setPassword("");
-  };
+  // const handleSubmit = () => {
+  //   const user = {
+  //     name: name,
+  //     password: password,
+  //   };
+  //   Keyboard.dismiss();
+  //   setName("");
+  //   setPassword("");
+  //   navigation.navigate("RegisterName");
+  // };
   return (
     <KeyboardAvoidingView
       behavior={Platform.OS === "ios" ? "padding" : "height"}
@@ -99,7 +102,7 @@ export default function Login() {
                 name={secureText ? "eye-sharp" : "eye-off-sharp"}
                 size={22}
                 color={"black"}
-                onPress={handleSecureText}
+                onPress={() => handleSecureText()}
               />
             </View>
             <Text style={styles.error}>{errorPassword}</Text>
@@ -114,7 +117,7 @@ export default function Login() {
         <View style={[styles.blockLogin]}>
           <TouchableOpacity
             disabled={isValidationOK() === false}
-            onPress={handleSubmit}
+            onPress={() => navigation.navigate("RegisterName")}
           >
             <Text
               style={{
