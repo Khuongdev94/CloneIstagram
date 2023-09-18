@@ -4,6 +4,7 @@ import Home from "../Home";
 import Search from "../Search/Search";
 import { NavigationContainer } from "@react-navigation/native";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
+import Setting from "../setting/Setting";
 
 const Tab = createBottomTabNavigator();
 const screenOptions = ({ route }: { route: any }) => ({
@@ -16,14 +17,13 @@ const screenOptions = ({ route }: { route: any }) => ({
   tabBarIcon: ({ focused }: { focused: any }) => {
     return (
       <Ionicons
-        style={{}}
         name={
           route.name == "Home"
             ? "home"
             : route.name == "Search"
             ? "search"
-            : route.name == "Settings"
-            ? "setting"
+            : route.name == "Setting"
+            ? "settings"
             : ""
         }
         size={24}
@@ -39,6 +39,7 @@ export default function Main() {
       <Tab.Navigator screenOptions={screenOptions}>
         <Tab.Screen name="Home" component={Home} />
         <Tab.Screen name="Search" component={Search} />
+        <Tab.Screen name="Setting" component={Setting} />
       </Tab.Navigator>
     </NavigationContainer>
   );
