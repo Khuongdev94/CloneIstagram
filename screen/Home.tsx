@@ -28,7 +28,7 @@ function fetchUserStory(params: FetchListPostParams) {
   return userIsLike;
 }
 
-export default function Home() {
+export default function Home({ navigation }: { navigation: any }) {
   const [stories, setStories] = useState([...userStory]);
   const [like, setLike] = useState(false);
 
@@ -50,11 +50,17 @@ export default function Home() {
   const handleFilterLike = (isGetOnlyLike: boolean) => {
     setLike(!isGetOnlyLike);
   };
-
+  const handleNextScreen = () => {
+    navigation.navigate("Search");
+  };
   return (
     <View style={styles.container}>
       {/* header */}
-      <Header onFilterLike={() => handleFilterLike(like)} like={like} />
+      <Header
+        onFilterLike={() => handleFilterLike(like)}
+        like={like}
+        onNextScreen={handleNextScreen}
+      />
       {/* story */}
       <View style={styles.story}>
         <View style={{ marginRight: 5 }}>
@@ -167,7 +173,7 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: "#fff",
     padding: 5,
-    marginVertical: 20,
+    marginTop: 20,
   },
   header: {
     flexDirection: "row",
