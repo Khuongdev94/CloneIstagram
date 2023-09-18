@@ -15,7 +15,7 @@ import Colors from "../../contants/Colors";
 import FontSize from "../../contants/FontSize";
 import { Ionicons } from "@expo/vector-icons";
 
-export default function RegisterPassWord() {
+export default function RegisterPassWord({ navigation }: { navigation: any }) {
   //kiểm tra dữ liệu
   const [errorPassword, setErrorPassword] = useState("");
 
@@ -108,6 +108,7 @@ export default function RegisterPassWord() {
                 fontSize: FontSize.h5,
                 color: "white",
               }}
+              onPress={() => navigation.navigate("Main")}
             >
               Next
             </Text>
