@@ -13,7 +13,7 @@ import {
 import Colors from "../../contants/Colors";
 import FontSize from "../../contants/FontSize";
 
-export default function RegisterName() {
+export default function RegisterName({ navigation }: { navigation: any }) {
   //kiểm tra dữ liệu
   const [errorName, setErrorName] = useState("");
   // lấy dữ liệu
@@ -61,7 +61,7 @@ export default function RegisterName() {
         <View style={[styles.blockLogin]}>
           <TouchableOpacity
             disabled={!name ? true : false}
-            onPress={handleSubmit}
+            onPress={() => navigation.navigate("RegisterPassWord")}
           >
             <Text
               style={{
