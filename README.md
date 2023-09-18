@@ -19,4 +19,5 @@
 
 
 ### 5. TabNavigations screen
-![main](https://github.com/Khuongdev94/CloneIstagram/assets/132865865/2ec3dd2f-4a3d-446c-9ddc-66b9b72e0822)
+![Tabnavigation](https://github.com/Khuongdev94/CloneIstagram/assets/132865865/972879f1-34a9-4883-adde-3a7e51cbafaf)
+
