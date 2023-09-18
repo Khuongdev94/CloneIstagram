@@ -17,3 +17,6 @@
 ### 4. Search screen
 ![search](https://github.com/Khuongdev94/CloneIstagram/assets/132865865/5d8baa70-caf3-4c24-a4d1-d155446f222a )
 
+
+### 5. TabNavigations screen
+![main](https://github.com/Khuongdev94/CloneIstagram/assets/132865865/2ec3dd2f-4a3d-446c-9ddc-66b9b72e0822)
