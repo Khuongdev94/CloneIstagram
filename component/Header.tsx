@@ -4,12 +4,16 @@ import { Ionicons, FontAwesome5 } from "@expo/vector-icons";
 import FontSize from "../contants/FontSize";
 interface IProps {
   onFilterLike: () => void;
+  onNextScreen: () => void;
   like: boolean;
 }
 
-export default function Header({ onFilterLike, like }: IProps) {
+export default function Header({ onFilterLike, like, onNextScreen }: IProps) {
   const handleUserFilter = () => {
     onFilterLike();
+  };
+  const handleNextScreen = () => {
+    onNextScreen();
   };
   return (
     <View style={styles.header}>
@@ -29,6 +33,7 @@ export default function Header({ onFilterLike, like }: IProps) {
           name="search"
           size={26}
           color={"blue"}
+          onPress={handleNextScreen}
         />
         <FontAwesome5
           style={styles.iconPassword}
